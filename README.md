@@ -70,24 +70,20 @@
 <a name="commands"></a>
 ### Commands
 
-| Command | Description | Permissions |
-|---|---|---|
-| `/ladder` | Show guild ladder. Filters and pagination via buttons | everyone |
-| `/runion` | Welcome + help with commands and badges | everyone |
-| `/roster add nick:<name>` | Add a player to the roster | everyone |
-| `/roster remove nick:<name>` | Remove a player from the roster | mods / admins (Manage Server) |
-| `/roster list` | Show current roster size | everyone |
+- `/ladder` — show the guild ladder; filters and pagination via buttons (everyone).
+- `/runion` — welcome and help with commands and badges (everyone).
+- `/roster add nick:<name>` — add a player to the roster (everyone).
+- `/roster remove nick:<name>` — remove a player from the roster (mods and admins with Manage Server).
+- `/roster list` — show the current roster size (everyone).
 
 #### Ladder badges
 
-| Badge | Meaning |
-|---|---|
-| 🥇 🥈 🥉 | Guild top-3 |
-| 👑 | Named player (custom badge) |
-| 🔺N | Climbed N positions |
-| 🔻N | Dropped N positions |
-| 🆕 | New in ladder |
-| ➖ | No change |
+- 🥇 🥈 🥉 — guild top-3.
+- 👑 — named player (custom badge).
+- 🔺N — climbed N positions.
+- 🔻N — dropped N positions.
+- 🆕 — new in the ladder.
+- ➖ — no change.
 
 Class icons: 💀 DK · 🌿 Druid · 🏹 Hunter · ❄️ Mage · 🔨 Paladin · 🙏 Priest · 🗡️ Rogue · ⚡ Shaman · 🔥 Warlock · ⚔️ Warrior
 
@@ -95,7 +91,7 @@ Class icons: 💀 DK · 🌿 Druid · 🏹 Hunter · ❄️ Mage · 🔨 Paladin
 ### Quick Start
 
 ```bash
-git clone https://github.com/Keoo88/uwu-logs.xyz-discord-ladder-bot.git
+git clone https://github.com/Keoo888/uwu-logs.xyz-discord-ladder-bot.git
 cd uwu-logs.xyz-discord-ladder-bot
 pip install -r requirements.txt
 cp .env.example .env
@@ -113,21 +109,19 @@ Logged in as RUnion bot#1120 (id=...)
 <a name="configuration"></a>
 ### Configuration (`.env`)
 
-| Variable | Default | Description |
-|---|---|---|
-| `DISCORD_TOKEN` | — | **Required.** Bot token from Developer Portal |
-| `DISCORD_GUILD_ID` | — | Server ID(s) for instant commands. Multiple: `111,222`. Empty → global (up to 1hr) |
-| `WARMANE_GUILD` | `RUnion` | Guild name |
-| `WARMANE_REALM` | `Icecrown` | Realm name |
-| `UWU_SERVER` | `Icecrown` | Realm for UwU Logs |
-| `UWU_MODE` | `browser` | Engine: `api` (recommended) or `browser` |
-| `UWU_SPECS` | `1,2,3` | Talent specs to check (best is taken) |
-| `LADDER_LIMIT` | `50` | Default ladder rows |
-| `CACHE_TTL` | `3600` | Cache TTL in seconds (1 hour) |
-| `UWU_REQUEST_DELAY` | `1.0` | Delay between UwU requests (sec) |
-| `UWU_CONCURRENCY` | `2` | Concurrent requests in `browser` mode |
-| `UWU_API_CONCURRENCY` | `8` | Concurrent requests in `api` mode |
-| `UWU_PRUNE_ROSTER` | `0` | `1` — auto-remove unfound players |
+- `DISCORD_TOKEN` — **required**; bot token from the Developer Portal.
+- `DISCORD_GUILD_ID` — server ID(s) for instant commands; separate multiple IDs with commas (`111,222`); empty means global (up to one hour).
+- `WARMANE_GUILD` — guild name; default `RUnion`.
+- `WARMANE_REALM` — realm name; default `Icecrown`.
+- `UWU_SERVER` — realm for UwU Logs; default `Icecrown`.
+- `UWU_MODE` — engine; default `browser`, `api` is recommended.
+- `UWU_SPECS` — talent specs to check; default `1,2,3`; the best result is taken.
+- `LADDER_LIMIT` — default ladder rows; default `50`.
+- `CACHE_TTL` — cache lifetime in seconds; default `3600` (one hour).
+- `UWU_REQUEST_DELAY` — delay between UwU requests in seconds; default `1.0`.
+- `UWU_CONCURRENCY` — concurrent requests in `browser` mode; default `2`.
+- `UWU_API_CONCURRENCY` — concurrent requests in `api` mode; default `8`.
+- `UWU_PRUNE_ROSTER` — `1` automatically removes players that are not found; default `0`.
 
 > Full list with comments in [`.env.example`](.env.example).
 
@@ -145,17 +139,15 @@ Lines starting with `#` and empty lines are ignored. Edit via Discord with `/ros
 <a name="project-structure"></a>
 ### Project Structure
 
-| File | Purpose |
-|---|---|
-| `bot.py` | Discord bot: commands, buttons, embeds |
-| `ladder.py` | Ladder builder, cache, version |
-| `uwu.py` | UwU Logs requests (api / browser), best spec |
-| `roster.py` | Roster read/write |
-| `store.py` | Disk cache, position history, best specs |
-| `config.py` | Config from `.env` |
-| `discover.py` | UwU API endpoint discovery helper |
-| `test_api.py` | Quick API mode test |
-| `roster.txt` | Player list |
+- `bot.py` — Discord bot: commands, buttons, embeds.
+- `ladder.py` — ladder builder, cache and version.
+- `uwu.py` — UwU Logs requests (API and browser) and best-spec lookup.
+- `roster.py` — roster read and write.
+- `store.py` — disk cache, position history and best specs.
+- `config.py` — configuration from `.env`.
+- `discover.py` — UwU API endpoint discovery helper.
+- `test_api.py` — quick API-mode test.
+- `roster.txt` — player list.
 
 <a name="faq"></a>
 ### FAQ
@@ -171,7 +163,7 @@ Lines starting with `#` and empty lines are ignored. Edit via Discord with `/ros
 <a name="license"></a>
 ### License
 
-MIT — do whatever you want, but credit the author.
+MIT — do whatever you want, but credit the author. See [LICENSE](LICENSE).
 
 Created by: **Egormashina**
 
@@ -225,24 +217,20 @@ Created by: **Egormashina**
 <a name="команды"></a>
 ### Команды
 
-| Команда | Описание | Права |
-|---|---|---|
-| `/ladder` | Показать ладдер гильдии. Фильтры и листалка — кнопками | все |
-| `/runion` | Приветствие + справка по командам и значкам | все |
-| `/roster add nick:<ник>` | Добавить игрока в ростер | все |
-| `/roster remove nick:<ник>` | Убрать игрока из ростера | модеры / админы (Manage Server) |
-| `/roster list` | Сколько игроков в ростере | все |
+- `/ladder` — показать ладдер гильдии; фильтры и листалка кнопками (все).
+- `/runion` — приветствие и справка по командам и значкам (все).
+- `/roster add nick:<ник>` — добавить игрока в ростер (все).
+- `/roster remove nick:<ник>` — убрать игрока из ростера (модеры и админы с Manage Server).
+- `/roster list` — сколько игроков в ростере (все).
 
 #### Значки в ладдере
 
-| Значок | Смысл |
-|---|---|
-| 🥇 🥈 🥉 | Топ-3 гильдии |
-| 👑 | «Наш человек» (именной значок) |
-| 🔺N | Поднялся на N позиций |
-| 🔻N | Опустился на N позиций |
-| 🆕 | Новичок в ладдере |
-| ➖ | Без изменений |
+- 🥇 🥈 🥉 — топ-3 гильдии.
+- 👑 — «наш человек» (именной значок).
+- 🔺N — поднялся на N позиций.
+- 🔻N — опустился на N позиций.
+- 🆕 — новичок в ладдере.
+- ➖ — без изменений.
 
 Иконки классов: 💀 DK · 🌿 Druid · 🏹 Hunter · ❄️ Mage · 🔨 Paladin · 🙏 Priest · 🗡️ Rogue · ⚡ Shaman · 🔥 Warlock · ⚔️ Warrior
 
@@ -250,7 +238,7 @@ Created by: **Egormashina**
 ### Быстрый старт
 
 ```bash
-git clone https://github.com/Keoo88/uwu-logs.xyz-discord-ladder-bot.git
+git clone https://github.com/Keoo888/uwu-logs.xyz-discord-ladder-bot.git
 cd uwu-logs.xyz-discord-ladder-bot
 pip install -r requirements.txt
 cp .env.example .env
@@ -268,21 +256,19 @@ RUnion Ladder Bot | 2026-07-05.38-local ... | UWU_MODE=api
 <a name="настройка"></a>
 ### Настройка (`.env`)
 
-| Переменная | По умолчанию | Описание |
-|---|---|---|
-| `DISCORD_TOKEN` | — | **Обязательно.** Токен бота из Developer Portal |
-| `DISCORD_GUILD_ID` | — | ID сервера(ов) для мгновенной регистрации. Несколько — через запятую (`111,222`). Пусто → глобально |
-| `WARMANE_GUILD` | `RUnion` | Название гильдии |
-| `WARMANE_REALM` | `Icecrown` | Реалм |
-| `UWU_SERVER` | `Icecrown` | Реалм для UwU Logs |
-| `UWU_MODE` | `browser` | Движок: `api` (рекомендуется) или `browser` |
-| `UWU_SPECS` | `1,2,3` | Какие ветки талантов проверять |
-| `LADDER_LIMIT` | `50` | Строк в ладдере по умолчанию |
-| `CACHE_TTL` | `3600` | TTL кеша (1 час) |
-| `UWU_REQUEST_DELAY` | `1.0` | Пауза между запросами к UwU (сек) |
-| `UWU_CONCURRENCY` | `2` | Одновременные запросы в `browser`-режиме |
-| `UWU_API_CONCURRENCY` | `8` | Одновременные запросы в `api`-режиме |
-| `UWU_PRUNE_ROSTER` | `0` | `1` — авто-удалять ненайденных |
+- `DISCORD_TOKEN` — **обязательно**; токен бота из Developer Portal.
+- `DISCORD_GUILD_ID` — ID сервера или серверов для мгновенной регистрации; несколько ID — через запятую (`111,222`); пусто — глобально (до часа).
+- `WARMANE_GUILD` — название гильдии; по умолчанию `RUnion`.
+- `WARMANE_REALM` — реалм; по умолчанию `Icecrown`.
+- `UWU_SERVER` — реалм для UwU Logs; по умолчанию `Icecrown`.
+- `UWU_MODE` — движок; по умолчанию `browser`, рекомендуется `api`.
+- `UWU_SPECS` — какие ветки талантов проверять; по умолчанию `1,2,3`; берётся лучший результат.
+- `LADDER_LIMIT` — строк в ладдере по умолчанию; `50`.
+- `CACHE_TTL` — время жизни кеша в секундах; по умолчанию `3600` (один час).
+- `UWU_REQUEST_DELAY` — пауза между запросами к UwU в секундах; по умолчанию `1.0`.
+- `UWU_CONCURRENCY` — одновременные запросы в `browser`-режиме; по умолчанию `2`.
+- `UWU_API_CONCURRENCY` — одновременные запросы в `api`-режиме; по умолчанию `8`.
+- `UWU_PRUNE_ROSTER` — `1` автоматически удаляет ненайденных игроков; по умолчанию `0`.
 
 > Полный список с комментариями — в [`.env.example`](.env.example).
 
@@ -300,17 +286,15 @@ Esno | Hunter
 <a name="устройство-проекта"></a>
 ### Устройство проекта
 
-| Файл | Назначение |
-|---|---|
-| `bot.py` | Discord-бот: команды, кнопки, эмбеды |
-| `ladder.py` | Сборка ладдера, кеш, версия |
-| `uwu.py` | Запросы к UwU Logs (api / browser), лучший спек |
-| `roster.py` | Чтение/запись ростера |
-| `store.py` | Дисковый кеш, история позиций, лучшие спеки |
-| `config.py` | Чтение настроек из `.env` |
-| `discover.py` | Поиск API-эндпоинта UwU |
-| `test_api.py` | Проверка API-режима |
-| `roster.txt` | Список игроков гильдии |
+- `bot.py` — Discord-бот: команды, кнопки, эмбеды.
+- `ladder.py` — сборка ладдера, кеш и версия.
+- `uwu.py` — запросы к UwU Logs (API и browser) и поиск лучшего спека.
+- `roster.py` — чтение и запись ростера.
+- `store.py` — дисковый кеш, история позиций и лучшие спеки.
+- `config.py` — настройки из `.env`.
+- `discover.py` — поиск API-эндпоинта UwU.
+- `test_api.py` — быстрая проверка API-режима.
+- `roster.txt` — список игроков гильдии.
 
 <a name="faq-1"></a>
 ### Частые вопросы
@@ -326,6 +310,6 @@ Esno | Hunter
 <a name="лицензия"></a>
 ### Лицензия
 
-MIT — делай что хочешь, но упоминай автора.
+MIT — делай что хочешь, но упоминай автора. Подробности — в [LICENSE](LICENSE).
 
 Создатель: **Egormashina**
